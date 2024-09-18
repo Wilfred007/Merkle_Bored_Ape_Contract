@@ -31,12 +31,12 @@ describe("Fork Mainnet and Interact with BAYC", function () {
 
     // Deploy ERC20 token
     [owner, addr1, addr2] = await ethers.getSigners();
-    const Token = await ethers.getContractFactory("MindToken");
+    const Token = await ethers.getContractFactory("");
     token = await Token.deploy();
     await token.waitForDeployment();
 
     // Deploy MerkleAirdrop contract
-    const MerkleAirdrop = await ethers.getContractFactory("MerkleAirdrop");
+    const MerkleAirdrop = await ethers.getContractFactory("MerkleTree");
     airdrop = await MerkleAirdrop.deploy(token.address, merkleRoot, BAYC_MAINNET_ADDRESS);
     await airdrop.deployed();
 
