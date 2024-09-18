@@ -8,7 +8,7 @@ import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 contract MerkleAirdrop {
     IERC20 public token;
 
-    IERC721 public BAYCNFT_tokenAddress = IERC721(0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d)
+    IERC721 public BAYCNFT_tokenAddress = IERC721(0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D);
 
     bytes32 public merkleRoot;
 
@@ -37,7 +37,7 @@ contract MerkleAirdrop {
     ) external {
 
         require(_address != address(0), "Address Zero Detected.");
-        require(BAYCNFT_tokenAddress.balanceOf(msg.sender) > 0, "Must a BAYCNFT")
+        require(BAYCNFT_tokenAddress.balanceOf(msg.sender) > 0, "Must a BAYCNFT");
 
         require(!hasClaimed[_address], "Airdrop already claimed.");
         
